@@ -1,0 +1,6 @@
+server:
+  servlet:
+    contextPath: /alert-service
+  port: 8081
+
+
