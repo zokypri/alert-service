@@ -1,5 +1,0 @@
-FROM mysql:latest
-
-# Environment Variables
-ENV MYSQL_DATABASE=alerts
-ENV MYSQL_ROOT_PASSWORD=pass
