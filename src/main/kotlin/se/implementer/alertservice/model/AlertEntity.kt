@@ -27,7 +27,7 @@ data class Alert(
                 alertId = policeWarning.id,
                 msg = policeWarning.msg,
                 type = AlertType.POLICE,
-                level = Level.MEDIUM,
+                level = policeWarning.level,
             )
     }
 }
