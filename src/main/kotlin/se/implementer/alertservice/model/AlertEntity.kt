@@ -1,5 +1,6 @@
 package se.implementer.alertservice.model
 
+import java.time.LocalDateTime
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
@@ -20,6 +21,10 @@ data class Alert(
 
     @Column("level")
     val level: Level,
+
+    @Column("created")
+    val created: LocalDateTime,
+
 ){
     companion object {
         fun mapToAlert(policeWarning: PoliceWarning): Alert =
@@ -28,6 +33,7 @@ data class Alert(
                 msg = policeWarning.msg,
                 type = AlertType.POLICE,
                 level = policeWarning.level,
+                created = LocalDateTime.now()
             )
     }
 }
