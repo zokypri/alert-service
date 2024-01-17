@@ -16,5 +16,6 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-
+  liquibase:
+    change-log: classpath:DB/liquibase/master/master-changelog.yml
 
