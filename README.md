@@ -36,13 +36,12 @@ After running the service locally run these commands in the terminal where mysql
 
 # DB table ALERTS structure
 
-| id | alert_id | msg    | type   | level  |
-+----+----------+--------+--------+--------+
-|  1 |        0 | string | POLICE | MEDIUM |
-|  2 |        0 | string | POLICE | MEDIUM |
-|  3 |        0 | string | POLICE | LOW    |
-|  4 |        0 | string | POLICE | LOW    |
-+----+----------+--------+--------+--------+
++----+----------+------------+--------+-------+---------------------+
+| id | alert_id | msg        | type   | level | created             |
++----+----------+------------+--------+-------+---------------------+
+|  1 |        1 | Test alert | POLICE | LOW   | 2024-01-17 08:22:25 |
++----+----------+------------+--------+-------+---------------------+
+
 
 # Microservice is under development
 List of TODO
