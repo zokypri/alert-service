@@ -1,0 +1,21 @@
+server:
+  servlet:
+    contextPath: /alert-service
+  port: 8070
+
+spring:
+  datasource:
+    url: jdbc:mysql://mysql:3306/NewsAgency
+    username: root
+    password: pass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    consumer:
+      group-id: alert-service-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  liquibase:
+    change-log: classpath:DB/liquibase/master/master-changelog.yml
+

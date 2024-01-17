@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: classpath:DB/liquibase/table/AlertService.yml
