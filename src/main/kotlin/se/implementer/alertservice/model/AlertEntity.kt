@@ -49,4 +49,5 @@ enum class Level {
     MEDIUM,
     HIGH,
     SEVERE,
+    RESOLVED,
 }
