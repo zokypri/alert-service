@@ -7,4 +7,5 @@ import se.implementer.alertservice.model.Alert
 @Repository
 interface AlertRepository : CrudRepository<Alert, Long> {
 
+    fun findAllByAlertId(alertId: Long):List<Alert>
 }
