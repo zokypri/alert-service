@@ -7,7 +7,7 @@ data class AlertDTO(
     val alertId: Long,
     val message: String,
     val type: AlertType,
-    val level: Level,
+    val level: LevelDto,
     val created: LocalDateTime,
 )
 
@@ -19,8 +19,26 @@ data class AlertDTO(
                 alertId = alert.alertId,
                 message = alert.msg,
                 type = alert.type,
-                level = alert.level,
+                level = alert.level.mapToLevelDto(),
                 created = alert.created,
             )
+    }
+}
+
+enum class LevelDto{
+    LOW,
+    MEDIUM,
+    HIGH,
+    SEVERE,
+    RESOLVED,
+}
+
+fun Level.mapToLevelDto(): LevelDto {
+    return when (this) {
+        Level.LOW -> LevelDto.LOW
+        Level.MEDIUM -> LevelDto.MEDIUM
+        Level.HIGH -> LevelDto.HIGH
+        Level.SEVERE -> LevelDto.SEVERE
+        Level.RESOLVED -> LevelDto.RESOLVED
     }
 }
